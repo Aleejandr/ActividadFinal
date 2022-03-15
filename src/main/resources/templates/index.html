@@ -1,0 +1,18 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Mi aplicación web</title>
+</head>
+<body>
+	<b>INICIO:</b> Aplicación web <b>APP</b>.
+	<ul> MENÚ:
+
+		<li th:if="${usuario.rol.rol == 'ADMIN'}"> <a href="/app/asignaturas">Lista Asignaturas</a></li>
+		<li> <a href="/app/listaUsuarios">Lista Usuarios</a></li>
+		
+
+		
+	</ul>
+</body>
+</html>
