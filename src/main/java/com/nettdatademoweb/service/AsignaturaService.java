@@ -6,5 +6,15 @@ import com.nettdatademoweb.repository.entity.Asignaturas;
 
 public interface AsignaturaService {
 
-	public List<Asignaturas> listar();
+	 List<Asignaturas> listar();
+
+	 Asignaturas getById(Integer id);
+
+	 void eliminar(Integer id);
+
+	 Asignaturas inserta(Asignaturas asignatura);
+
+	Asignaturas modifica(Asignaturas asignatura);
+
+	void eliminarTodasAsignaturas();
 }

@@ -21,4 +21,38 @@ public class AsignaturaServiceImpl implements AsignaturaService {
 		return asignaturarepo.findAll();
 	}
 
+	@Override
+	public Asignaturas getById(Integer id) {
+		
+		return asignaturarepo.findById(id).orElse(null);
+	}
+
+	@Override
+	public void eliminar(Integer id) {
+		
+		
+		asignaturarepo.deleteById(id);
+	}
+
+	@Override
+	public Asignaturas inserta(Asignaturas asignatura) {
+		
+		
+		return asignaturarepo.save(asignatura);
+	}
+
+	@Override
+	public Asignaturas modifica(Asignaturas asignatura) {
+		
+		return asignaturarepo.save(asignatura);
+	}
+
+	@Override
+	public void eliminarTodasAsignaturas() {
+	
+		asignaturarepo.deleteAll();
+		
+	}
+	
+	
 }
