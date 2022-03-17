@@ -35,18 +35,19 @@ public class AsignaturaRestController {
 	public ResponseEntity<List<Asignaturas>> listarAsignaturas(){
 		
 		try {
-			return new ResponseEntity<List<Asignaturas>>(asignaturaservice.listar() ,HttpStatus.OK);
+			//return new ResponseEntity<List<Asignaturas>>(asignaturaservice.listar() ,HttpStatus.OK);
 			
 		} 		catch (Exception ex) {
 			
-			return new ResponseEntity<> (null, HttpStatus.INTERNAL_SERVER_ERROR);
+			//return new ResponseEntity<> (null, HttpStatus.INTERNAL_SERVER_ERROR);
+			
 		}
-	
+		return new ResponseEntity<List<Asignaturas>>(asignaturaservice.listar() ,HttpStatus.OK);
 	}
 	
 	
 	@GetMapping (value="/{id}")
-	public ResponseEntity<Asignaturas> devuelveAsignatura(@PathVariable("id") Integer id){
+	public ResponseEntity<Asignaturas> devuelveAsignatura(@PathVariable("id") Integer id) throws Exception{
 		
 		Asignaturas asig = asignaturaservice.getById(id);
 		
@@ -68,7 +69,7 @@ public class AsignaturaRestController {
 	
 	@DeleteMapping (value="/{id}")
 	@CacheEvict(value="Asignaturas" , allEntries= true)
-	public ResponseEntity<List<Asignaturas>> eliminarAsignatura(@PathVariable("id") Integer id){
+	public ResponseEntity<List<Asignaturas>> eliminarAsignatura(@PathVariable("id") Integer id) throws Exception{
 		
 		Asignaturas asig = asignaturaservice.getById(id);
 		
@@ -98,7 +99,7 @@ public class AsignaturaRestController {
 	
 	@PostMapping
 	@CacheEvict(value="Asignaturas" , allEntries= true)
-	public  ResponseEntity<Asignaturas> insertaAsignatura(@RequestBody Asignaturas asignatura) {
+	public  ResponseEntity<Asignaturas> insertaAsignatura(@RequestBody Asignaturas asignatura) throws Exception {
 		
 		try {
 			HttpHeaders headers = new HttpHeaders();
@@ -128,40 +129,20 @@ public class AsignaturaRestController {
 	@CacheEvict(value="Asignaturas" , allEntries= true)
 	public ResponseEntity<Asignaturas> modificarAsignaturas(@RequestBody Asignaturas asignatura) {
 		
-		try {
-		
 		Asignaturas asig = asignaturaservice.modifica(asignatura);
 		
 		return new ResponseEntity<Asignaturas> (asig , HttpStatus.OK);
-		
-		} catch (Exception ex) {
-			
-			return new ResponseEntity<> (null, HttpStatus.INTERNAL_SERVER_ERROR);
-			
-		}
-		
 	}
+	
+	
 	
 	@DeleteMapping
 	@CacheEvict(value="Asignaturas" , allEntries= true)
 	public  ResponseEntity<List<Asignaturas>>  eliminarTodasAsignatura(){
 		
-
-		try {
-
-			asignaturaservice.eliminarTodasAsignaturas();
-			
-		
-		} catch (Exception ex) {
-		
-			return new ResponseEntity<> (null, HttpStatus.INTERNAL_SERVER_ERROR);
-			
-			}
-		
+		asignaturaservice.eliminarTodasAsignaturas();
 		return new ResponseEntity<List<Asignaturas>>(asignaturaservice.listar() ,HttpStatus.OK);
-			
-
-		
+	
 	}
 
 

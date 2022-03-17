@@ -1,0 +1,24 @@
+2022-03-17 11:41:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURAS" no encontrada
+Table "ASIGNATURAS" not found; SQL statement:
+insert into Asignaturas (id, nombre, descripcion , Curso) select 1, 'Matematicas', 'Lo de Sumar y Restar' , 5 from dual where not exists (select 1 from Asignaturas where id = 1) [42102-200]
+2022-03-17 11:42:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURAS" no encontrada
+Table "ASIGNATURAS" not found; SQL statement:
+insert into Asignaturas (id, nombre, descripcion , Curso) select 1, 'Matematicas', 'Lo de Sumar y Restar' , 5 from dual where not exists (select 1 from Asignaturas where id = 1) [42102-200]
+2022-03-17 11:43:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURAS" no encontrada
+Table "ASIGNATURAS" not found; SQL statement:
+insert into Asignaturas (id, nombre, descripcion , Curso) select 1, 'Matematicas', 'Lo de Sumar y Restar' , 5 from dual where not exists (select 1 from Asignaturas where id = 1) [42102-200]
+2022-03-17 19:11:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "NOMBRE VARCHAR(20)": "'Cambio nombre Asignatura' (24)"
+Value too long for column "NOMBRE VARCHAR(20)": "'Cambio nombre Asignatura' (24)"; SQL statement:
+update asignaturas set curso=?, descripcion=?, nombre=? where id=? [22001-200]
+2022-03-17 19:12:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "NOMBRE VARCHAR(20)": "'Cambio nombre Asignatura' (24)"
+Value too long for column "NOMBRE VARCHAR(20)": "'Cambio nombre Asignatura' (24)"; SQL statement:
+update asignaturas set curso=?, descripcion=?, nombre=? where id=? [22001-200]
+2022-03-17 19:15:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "NOMBRE VARCHAR(20)": "'Cambio nombre Asignatura' (24)"
+Value too long for column "NOMBRE VARCHAR(20)": "'Cambio nombre Asignatura' (24)"; SQL statement:
+update asignaturas set curso=?, descripcion=?, nombre=? where id=? [22001-200]

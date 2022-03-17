@@ -1,0 +1,12 @@
+2022-03-17 11:27:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURAS" no encontrada
+Table "ASIGNATURAS" not found; SQL statement:
+insert into Asignaturas (id, nombre, descripcion , Curso) select 1, 'Matematicas', 'Lo de Sumar y Restar' , 5 from dual where not exists (select 1 from Asignaturas where id = 1) [42102-200]
+2022-03-17 11:28:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURAS" no encontrada
+Table "ASIGNATURAS" not found; SQL statement:
+insert into Asignaturas (id, nombre, descripcion , Curso) select 1, 'Matematicas', 'Lo de Sumar y Restar' , 5 from dual where not exists (select 1 from Asignaturas where id = 1) [42102-200]
+2022-03-17 11:35:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURAS" no encontrada
+Table "ASIGNATURAS" not found; SQL statement:
+insert into Asignaturas (id, nombre, descripcion , Curso) select 1, 'Matematicas', 'Lo de Sumar y Restar' , 5 from dual where not exists (select 1 from Asignaturas where id = 1) [42102-200]

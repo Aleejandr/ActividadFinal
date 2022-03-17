@@ -16,40 +16,31 @@ public class AsignaturaServiceImpl implements AsignaturaService {
 	AsignaturaRepoJPA asignaturarepo;
 	
 	public List<Asignaturas> listar() {
-		
-		
 		return asignaturarepo.findAll();
 	}
 
 	@Override
-	public Asignaturas getById(Integer id) {
-		
+	public Asignaturas getById(Integer id) throws Exception {
 		return asignaturarepo.findById(id).orElse(null);
 	}
 
 	@Override
 	public void eliminar(Integer id) {
-		
-		
 		asignaturarepo.deleteById(id);
 	}
 
 	@Override
-	public Asignaturas inserta(Asignaturas asignatura) {
-		
-		
+	public Asignaturas inserta(Asignaturas asignatura) throws Exception {
 		return asignaturarepo.save(asignatura);
 	}
 
 	@Override
 	public Asignaturas modifica(Asignaturas asignatura) {
-		
 		return asignaturarepo.save(asignatura);
 	}
 
 	@Override
 	public void eliminarTodasAsignaturas() {
-	
 		asignaturarepo.deleteAll();
 		
 	}
